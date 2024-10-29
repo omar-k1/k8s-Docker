@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service
+spec:
+  selector:
+    app: frontend  # This should match the label in your Deployment
+  ports:
+    - protocol: TCP
+      port: 3000    # Port that the service will expose
+      targetPort: 3000  # Port on the container
+      nodePort: 30000  # Optional: specify a NodePort value, or let Kubernetes assign one
+  type: NodePort   # This allows external access to the frontend service

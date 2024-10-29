@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  labels:
+    app: backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: backend
+          image: omarz1/frontend:backend  # Replace with your actual backend image name
+          ports:
+            - containerPort: 8080  # Adjust if your application runs on a different port
+          env:
+            - name: MYSQL_HOST
+              value: "db-service"  # Service name of the database
+            - name: MYSQL_PASSWORD
+              valueFrom:
+               secretKeyRef:
+                name: db-secret
+                key: root-password
+      imagePullSecrets:
+        - name: image-pull-auth
+
