@@ -101,7 +101,6 @@ Make sure you have the following tools installed before proceeding:
 
 
 ### ConfigMap and Secret
-![Screenshot from 2024-10-29 16-54-38](https://github.com/user-attachments/assets/cd2fd630-5e36-4db8-8bc9-71698f80a2d2)
 
   -  Create ConfigMap YAML: Add configmap.yaml with necessary configuration data for your application.
 
