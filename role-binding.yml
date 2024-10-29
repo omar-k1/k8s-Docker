@@ -6,7 +6,7 @@ metadata:
 subjects:
   - kind: ServiceAccount  
     name: k8s-service-account
-    namespace: deafult  
+    namespace: default  
 roleRef:
   kind: Role
   name: k8s-role  
